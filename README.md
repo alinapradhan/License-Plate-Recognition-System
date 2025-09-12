@@ -1,5 +1,4 @@
 # AdaBoost-Image-Projects
-Here’s the full **README.md** content directly in chat:
 
 ---
 
