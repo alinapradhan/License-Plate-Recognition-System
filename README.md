@@ -1,6 +1,3 @@
-# AdaBoost-Image-Projects
-
----
 
 # AdaBoost Image Projects
 
