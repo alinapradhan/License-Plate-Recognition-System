@@ -7,7 +7,7 @@ This repository contains step-by-step projects demonstrating **AdaBoost** applie
 2. **Face Detection** (OpenCV Haar Cascade, trained with AdaBoost internally)
 3. **Face vs Non-Face Classification** using **HOG features + AdaBoost**
 
----
+--- 
 
 ## 📦 Requirements
 
