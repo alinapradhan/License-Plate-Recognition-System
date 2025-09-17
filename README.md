@@ -102,11 +102,4 @@ python adaboost_hog_faces.py
 * [OpenCV Haar Cascades](https://docs.opencv.org/master/d7/d8b/tutorial_py_face_detection.html)
 * [HOG Features (scikit-image)](https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_hog.html)
 
----
-
-##  Author
-
-Created as a step-by-step AdaBoost image project for learning and practice.
-
----
 
