@@ -8,7 +8,7 @@ This repository contains step-by-step projects demonstrating **AdaBoost** applie
 3. **Face vs Non-Face Classification** using **HOG features + AdaBoost** 
 
 --- 
- 
+  
 ## Requirements   
  
 Install dependencies:
