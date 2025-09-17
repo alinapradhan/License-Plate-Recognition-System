@@ -4,7 +4,7 @@
 This repository contains step-by-step projects demonstrating **AdaBoost** applied to images:
 
 1. **MNIST Digit Classification** (AdaBoost with decision stumps)
-2. **Face Detection** (OpenCV Haar Cascade, trained with AdaBoost internally)
+2. **Face Detection** (OpenCV Haar Cascade, trained with AdaBoost internally) 
 3. **Face vs Non-Face Classification** using **HOG features + AdaBoost** 
 
 --- 
