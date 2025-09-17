@@ -9,7 +9,7 @@ This repository contains step-by-step projects demonstrating **AdaBoost** applie
 
 --- 
  
-## 📦 Requirements 
+## Requirements 
  
 Install dependencies:
 
@@ -19,7 +19,7 @@ pip install numpy matplotlib scikit-learn joblib opencv-python scikit-image
 
 ---
 
-## 🚀 Projects
+## Projects
 
 ### 1. MNIST Digit Classification
 
@@ -81,14 +81,14 @@ python adaboost_hog_faces.py
 
 ---
 
-## ⚡ Notes
+## Notes
 
 * If using **scikit-learn ≥ 1.2**, the correct parameter is `estimator=` (already fixed in this code).
 * For older scikit-learn (<1.2), replace with `base_estimator=` if needed.
 
 ---
 
-## 📂 Files
+##  Files
 
 * `adaboost_mnist.py` → MNIST digit classification
 * `face_detection.py` → Face detection with Haar cascades (image/webcam)
@@ -96,7 +96,7 @@ python adaboost_hog_faces.py
 
 ---
 
-## ✨ References
+##  References
 
 * [Scikit-learn AdaBoost Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
 * [OpenCV Haar Cascades](https://docs.opencv.org/master/d7/d8b/tutorial_py_face_detection.html)
@@ -104,7 +104,7 @@ python adaboost_hog_faces.py
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Created as a step-by-step AdaBoost image project for learning and practice.
 
