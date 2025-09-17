@@ -9,7 +9,7 @@ This repository contains step-by-step projects demonstrating **AdaBoost** applie
 
 --- 
  
-## Requirements 
+## Requirements  
  
 Install dependencies:
 
