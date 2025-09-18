@@ -1,6 +1,6 @@
 
 # License Plate Recognition System
-
+ 
 A comprehensive, cross-platform license plate detection and recognition system using YOLOv8 for detection and EasyOCR for text recognition. Features real-time camera processing, encrypted storage, and both web and mobile interfaces.
 
 ##  Features 
