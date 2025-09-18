@@ -45,7 +45,7 @@ class Detection(Base):
     image_data = Column(LargeBinary, nullable=True)
     
     # Additional metadata as JSON
-    metadata = Column(Text, nullable=True)  # Encrypted JSON string
+    extra_data = Column(Text, nullable=True)  # Encrypted JSON string
 
 
 class User(Base):
@@ -199,7 +199,7 @@ class DatabaseManager:
                     'raw_results': detection_data.get('raw_results', {}),
                     'processing_info': detection_data.get('processing_info', {})
                 }
-                detection.metadata = self.encryption_manager.encrypt_json(metadata)
+                detection.extra_data = self.encryption_manager.encrypt_json(metadata)
             else:
                 detection.license_plate_text = license_text
                 if gps_coords:
@@ -210,7 +210,7 @@ class DatabaseManager:
                     'raw_results': detection_data.get('raw_results', {}),
                     'processing_info': detection_data.get('processing_info', {})
                 }
-                detection.metadata = json.dumps(metadata)
+                detection.extra_data = json.dumps(metadata)
             
             # Add to database
             db.add(detection)
@@ -284,13 +284,13 @@ class DatabaseManager:
                         except:
                             result['gps_coords'] = [detection.gps_latitude, detection.gps_longitude]
                     
-                    result['metadata'] = self.encryption_manager.decrypt_json(detection.metadata)
+                    result['metadata'] = self.encryption_manager.decrypt_json(detection.extra_data)
                 else:
                     result['license_plate_text'] = detection.license_plate_text
                     if detection.gps_latitude and detection.gps_longitude:
                         result['gps_coords'] = [detection.gps_latitude, detection.gps_longitude]
                     try:
-                        result['metadata'] = json.loads(detection.metadata) if detection.metadata else {}
+                        result['metadata'] = json.loads(detection.extra_data) if detection.extra_data else {}
                     except:
                         result['metadata'] = {}
                 

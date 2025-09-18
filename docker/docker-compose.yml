@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  license-plate-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../data:/app/data
+      - ../uploads:/app/uploads
+      - ../results:/app/results
+      - ../models:/app/models
+    environment:
+      - DATABASE_URL=sqlite:///data/license_plate_app.db
+      - ENCRYPTION_KEY_PATH=/app/data/.encryption_key
+    restart: unless-stopped
+    networks:
+      - license-plate-net
+
+  # Optional: Add a reverse proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../frontend/build:/usr/share/nginx/html:ro
+    depends_on:
+      - license-plate-api
+    networks:
+      - license-plate-net
+    restart: unless-stopped
+
+networks:
+  license-plate-net:
+    driver: bridge
+
+volumes:
+  app-data:
+    driver: local
