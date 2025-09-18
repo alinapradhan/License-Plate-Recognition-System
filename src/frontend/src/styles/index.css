@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* License plate visualization styles */
+.plate-overlay {
+  position: absolute;
+  border: 2px solid #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+.plate-overlay.invalid {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.plate-label {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background: #10b981;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.plate-label.invalid {
+  background: #f59e0b;
+}
+
+/* Camera feed styles */
+.camera-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.camera-feed {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Upload dropzone styles */
+.dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.dropzone.reject {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+/* Loading animations */
+.loading-spinner {
+  border: 2px solid #f3f4f6;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Detection results styles */
+.detection-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  border-left: 4px solid #10b981;
+  transition: all 0.3s ease;
+}
+
+.detection-card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+.detection-card.invalid {
+  border-left-color: #f59e0b;
+}
+
+/* Status indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-indicator.online {
+  background-color: #10b981;
+}
+
+.status-indicator.offline {
+  background-color: #ef4444;
+}
+
+.status-indicator.processing {
+  background-color: #f59e0b;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive design helpers */
+@media (max-width: 640px) {
+  .camera-container {
+    width: 100%;
+  }
+  
+  .detection-card {
+    margin-bottom: 1rem;
+  }
+}
