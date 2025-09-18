@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Backend API Service
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/data/models/best.pt
+      - DETECTION_CONFIDENCE=0.5
+      - OCR_CONFIDENCE=0.3
+      - USE_GPU=false
+      - DATABASE_URL=sqlite:///data/plates.db
+      - STORAGE_KEY=${STORAGE_KEY:-change-this-in-production}
+    volumes:
+      - ./data:/app/data
+      - ./runs:/app/runs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend Service (nginx serving React build)
+  frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    restart: unless-stopped
+
+  # Optional: PostgreSQL database (uncomment to use instead of SQLite)
+  # db:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_DB: plates
+  #     POSTGRES_USER: plates_user
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-secure_password}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+  # Optional: Redis for caching (uncomment if needed)
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+
+volumes:
+  postgres_data:
