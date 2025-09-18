@@ -13,7 +13,7 @@ A comprehensive, cross-platform license plate detection and recognition system u
 
 ### Privacy & Security
 - **Encrypted Storage**: All images and sensitive data encrypted at rest
-- **Data Retention Policies**: Configurable automatic data deletion
+- **Data Retention Policies**: Configurable automatic data deletion 
 - **Privacy Controls**: User consent management and data export options
 - **Secure API**: Authentication and rate limiting support
 
