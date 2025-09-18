@@ -3,7 +3,7 @@
 
 A comprehensive, cross-platform license plate detection and recognition system using YOLOv8 for detection and EasyOCR for text recognition. Features real-time camera processing, encrypted storage, and both web and mobile interfaces.
 
-## 🚀 Features
+##  Features
 
 ### Core Functionality
 - **YOLOv8-based License Plate Detection**: High-accuracy detection with customizable confidence thresholds
@@ -23,7 +23,7 @@ A comprehensive, cross-platform license plate detection and recognition system u
 - **Detection History**: Searchable history with filtering and export
 - **Performance Analytics**: Real-time statistics and system monitoring
 
-## 📋 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 - Python 3.8+ (recommended: 3.11)
@@ -35,7 +35,7 @@ A comprehensive, cross-platform license plate detection and recognition system u
 - Camera (for real-time detection)
 - GPU (NVIDIA with CUDA support) - optional but improves performance
 
-## 🛠 Installation
+##  Installation
 
 ### 1. Clone Repository
 ```bash
@@ -82,7 +82,7 @@ npm run build
 cd ../..
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Using Docker (Recommended)
 ```bash
@@ -120,7 +120,7 @@ cd src/frontend
 npm start
 ```
 
-## 📖 Usage Guide
+##  Usage Guide
 
 ### 1. Web Interface
 1. **Home Dashboard**: Overview of system status and recent detections
@@ -160,7 +160,7 @@ ws.onmessage = (event) => {
 };
 ```
 
-## 🧪 Training Custom Models
+##  Training Custom Models
 
 ### 1. Prepare Your Dataset
 ```bash
@@ -193,7 +193,7 @@ python scripts/train_model.py \
 # Check training_summary.json for metrics and exported models
 ```
 
-## 📱 Mobile Development
+##  Mobile Development
 
 ### React Native Setup
 ```bash
@@ -208,7 +208,7 @@ npx react-native run-ios
 npx react-native run-android
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 Create a `.env` file in the root directory:
@@ -236,7 +236,7 @@ API_PORT=8000
 - **Data Retention**: Automatic deletion period (days)
 - **GPU Usage**: Enable/disable GPU acceleration
 
-## 🧪 Testing
+##  Testing
 
 ### Run Tests
 ```bash
@@ -254,7 +254,7 @@ npm test
 python scripts/performance_test.py --concurrent 10 --requests 100
 ```
 
-## 📊 Performance Optimization
+##  Performance Optimization
 
 ### Model Optimization
 - Use appropriate YOLOv8 variant (n/s/m/l/x) based on speed vs accuracy needs
@@ -267,7 +267,7 @@ python scripts/performance_test.py --concurrent 10 --requests 100
 - Use Redis for caching (optional)
 - Implement load balancing for high traffic
 
-## 🔐 Privacy & Security
+##  Privacy & Security
 
 ### Data Protection
 - All stored images are encrypted using Fernet symmetric encryption
@@ -281,7 +281,7 @@ python scripts/performance_test.py --concurrent 10 --requests 100
 - HTTPS support with SSL/TLS certificates
 - Secure file upload handling
 
-## 🚀 Deployment
+##  Deployment
 
 ### Production Deployment
 1. **Environment Setup**:
@@ -320,7 +320,7 @@ python scripts/performance_test.py --concurrent 10 --requests 100
 - **Azure**: Use Container Instances or App Service
 - **Kubernetes**: Use provided k8s manifests
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -351,7 +351,7 @@ python scripts/performance_test.py --concurrent 10 --requests 100
 - Use appropriate model size for your hardware
 - Consider implementing caching strategies
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -366,11 +366,11 @@ python scripts/performance_test.py --concurrent 10 --requests 100
 - Update documentation for API changes
 - Use meaningful commit messages
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Dataset**: [Car Plate Detection Dataset](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection) by Andrew Mvd
 - **YOLOv8**: Ultralytics for the YOLOv8 framework
@@ -378,13 +378,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React**: Meta for the React framework
 - **FastAPI**: Sebastián Ramirez for the FastAPI framework
 
-## 📞 Support
+##  Support
 
 For questions and support:
 - Create an issue on GitHub
 - Check the documentation in `/docs`
 - Review troubleshooting section above
 
----
-
-**Data source**: https://www.kaggle.com/datasets/andrewmvd/car-plate-detection
