@@ -11,7 +11,7 @@ A comprehensive, cross-platform license plate detection and recognition system u
 - **Real-time Processing**: Live camera feed with WebSocket-based streaming
 - **Cross-platform Support**: Web (React), Mobile (React Native), and API endpoints
 
-### Privacy & Security
+### Privacy & Security 
 - **Encrypted Storage**: All images and sensitive data encrypted at rest
 - **Data Retention Policies**: Configurable automatic data deletion 
 - **Privacy Controls**: User consent management and data export options
